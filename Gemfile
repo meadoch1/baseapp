@@ -19,6 +19,8 @@ gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
+gem 'rails_admin'
+gem 'cancancan', '~> 1.10'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

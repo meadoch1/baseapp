@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @carset.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @carset.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @carset.user %>
+</p>
+
+<%= link_to 'Edit', edit_carset_path(@carset) %> |
+<%= link_to 'Back', carsets_path %>

@@ -1,28 +1,10 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This branch has the following features to implement:
+  1) As an admin I can upload a new list of car models to the system.
+  2) As a user I can search for all models of interest, view them, and download a csv of them.
+      Given a user logged into the system
+      a) I can select a year and see all car models from that year
+      b) I can select a make of car and see all models that maker has produced
+      c) I can search for models by text in their name
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

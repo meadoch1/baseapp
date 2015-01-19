@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Carsets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carsets.each do |carset| %>
+      <tr>
+        <td><%= carset.name %></td>
+        <td><%= carset.description %></td>
+        <td><%= carset.user %></td>
+        <td><%= link_to 'Show', carset %></td>
+        <td><%= link_to 'Edit', edit_carset_path(carset) %></td>
+        <td><%= link_to 'Destroy', carset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Carset', new_carset_path %>

@@ -21,6 +21,7 @@ gem 'autoprefixer-rails'
 
 gem 'rails_admin'
 gem 'cancancan', '~> 1.10'
+gem "paperclip", "~> 4.2"
 # Use Unicorn as the app server
 # gem 'unicorn'
 

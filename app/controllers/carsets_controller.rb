@@ -42,6 +42,6 @@ class CarsetsController < ApplicationController
     end
 
     def carset_params
-      params.require(:carset).permit(:name, :description, :user_id)
+      params.require(:carset).permit(:name, :description, :user_id, :file)
     end
 end

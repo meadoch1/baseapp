@@ -1,0 +1,2 @@
+module CarSearchHelper
+end

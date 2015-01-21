@@ -33,3 +33,4 @@ coverage
 .idea
 .secret
 tags
+public/system/*

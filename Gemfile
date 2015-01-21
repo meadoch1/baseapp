@@ -10,6 +10,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
@@ -22,6 +23,7 @@ gem 'autoprefixer-rails'
 gem 'rails_admin'
 gem 'cancancan', '~> 1.10'
 gem "paperclip", "~> 4.2"
+gem 'jquery-datatables-rails', '~> 3.1.1'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

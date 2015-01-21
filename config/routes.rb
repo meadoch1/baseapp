@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'car_search/index'
+  get 'car_search/find'
+
+  get 'car_search_controller/index'
+
   resources :carsets
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

@@ -5,7 +5,7 @@ class CarsetImportService
     CarPoint.delete_all
     csv = CSV.new(file, headers: false)
     csv.each do |row|
-      car = CarPoint.new(year: row[0], make: row[1], model: row[2])
+      car = CarPoint.new(year: row[0], make: clean(row[1]), model: clean(row[2]))
       if car.valid?
         car.save
       else
@@ -17,5 +17,9 @@ class CarsetImportService
     else
       {success: false, rejected_rows: rejected_rows}
     end
+  end
+
+  def self.clean(string)
+    string.strip.gsub(/\A'/, '').gsub(/'\Z/,'')
   end
 end

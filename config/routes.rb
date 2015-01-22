@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :car_points
+
   get 'car_search/index'
   get 'car_search/find'
 

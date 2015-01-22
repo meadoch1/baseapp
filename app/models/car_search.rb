@@ -16,7 +16,4 @@ class CarSearch
     {results: @points}.to_json
   end
 
-  def to_csv(options={})
-    @points.to_csv
-  end
 end

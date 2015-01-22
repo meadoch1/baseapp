@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :car_point do
-    year "MyString"
-make "MyString"
-model "MyString"
+    year "2001"
+    make "Ford"
+    model "Mustang"
   end
 
 end

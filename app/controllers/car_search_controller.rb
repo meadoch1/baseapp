@@ -1,6 +1,8 @@
 class CarSearchController < ApplicationController
   respond_to :html, :json, :csv
 
+  load_and_authorize_resource
+
   def index
     @carpoint = CarPoint.new
     @years = CarPoint.uniq.pluck(:year).sort

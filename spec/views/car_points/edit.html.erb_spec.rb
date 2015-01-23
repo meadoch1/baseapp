@@ -2,11 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "car_points/edit", :type => :view do
   before(:each) do
-    @car_point = assign(:car_point, CarPoint.create!(
-      :year => "MyString",
-      :make => "MyString",
-      :model => "MyString"
-    ))
+    @car_point = assign(:car_point, create( :car_point))
   end
 
   it "renders the edit car_point form" do

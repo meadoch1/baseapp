@@ -4,10 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
 
-  check_authorization :unless => :do_not_check_authorization?
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
   end
+
+  check_authorization :unless => :do_not_check_authorization?
 
   private
   def do_not_check_authorization?

@@ -18,4 +18,5 @@
 //= require dataTables/extras/dataTables.tableTools
 //= require twitter/bootstrap
 //= require turbolinks
+//= require baseapp
 //= require_tree .

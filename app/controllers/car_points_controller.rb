@@ -6,7 +6,7 @@ class CarPointsController < ApplicationController
   respond_to :html
 
   def index
-    @car_points = CarPoint.all
+    @car_points = CarPoint.order("year").page(params[:page])
     respond_with(@car_points)
   end
 

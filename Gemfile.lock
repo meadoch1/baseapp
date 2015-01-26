@@ -366,6 +366,7 @@ DEPENDENCIES
   jquery-datatables-rails (~> 3.1.1)
   jquery-rails
   jquery-turbolinks
+  kaminari
   launchy
   paperclip (~> 4.2)
   pg

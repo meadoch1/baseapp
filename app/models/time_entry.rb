@@ -2,9 +2,9 @@ class TimeEntry < ActiveRecord::Base
   belongs_to :user
   belongs_to :task
   belongs_to :project
-  validate :user, presence: true
-  validate :task, presence: true
-  validate :project, presence: true
+  validates :user, presence: true
+  validates :task, presence: true
+  validates :project, presence: true
 
   after_initialize :defaults
 

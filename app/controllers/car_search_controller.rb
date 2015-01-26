@@ -1,5 +1,5 @@
 class CarSearchController < ApplicationController
-  respond_to :html, :json
+  respond_to :html, :json, :csv
 
   load_and_authorize_resource
 

@@ -33,6 +33,8 @@ gem 'jquery-datatables-rails', '~> 3.1.1'
 group :development, :test do
   gem 'rspec-rails'
   gem 'pry-rails'
+  gem 'pry-nav'
+  gem 'pry-stack_explorer'
   gem 'factory_girl_rails'
   gem 'figaro'
   gem 'byebug'

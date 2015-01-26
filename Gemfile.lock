@@ -59,11 +59,7 @@ GEM
       timers (~> 4.0.0)
     childprocess (0.5.5)
       ffi (~> 1.0, >= 1.0.11)
-    climate_control (0.0.3)
-      activesupport (>= 3.0)
     cliver (0.3.2)
-    cocaine (0.5.5)
-      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -131,11 +127,6 @@ GEM
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
-    jquery-datatables-rails (3.1.1)
-      actionpack (>= 3.1)
-      jquery-rails
-      railties (>= 3.1)
-      sass-rails
     jquery-rails (4.0.3)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -149,8 +140,6 @@ GEM
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    kaminari-rspec (0.16.1)
-      kaminari (~> 0.16)
     launchy (2.4.3)
       addressable (~> 2.3)
     libv8 (3.16.14.7)
@@ -176,11 +165,6 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
-    paperclip (4.2.1)
-      activemodel (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.5.3)
-      mime-types
     pg (0.18.1)
     phantomjs (1.9.7.1)
     poltergeist (1.5.1)
@@ -365,13 +349,9 @@ DEPENDENCIES
   guard-rspec
   jasmine-rails
   jbuilder (~> 2.0)
-  jquery-datatables-rails (~> 3.1.1)
   jquery-rails
   jquery-turbolinks
-  kaminari
-  kaminari-rspec
   launchy
-  paperclip (~> 4.2)
   pg
   poltergeist
   pry-nav

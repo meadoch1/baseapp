@@ -1,0 +1,2 @@
+* Normalize the customer data into proper customer, address, contact (phone, email) structure
+* Add bill rate to employees/project-customer to enable easier billing

@@ -149,6 +149,8 @@ GEM
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kaminari-rspec (0.16.1)
+      kaminari (~> 0.16)
     launchy (2.4.3)
       addressable (~> 2.3)
     libv8 (3.16.14.7)
@@ -367,6 +369,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   kaminari
+  kaminari-rspec
   launchy
   paperclip (~> 4.2)
   pg

@@ -39,16 +39,20 @@ if (typeof baseapp.carsearch === "undefined") {
 
       $("#submitSearch").on("click", function(e){
         e.preventDefault();
+
         showProcessing();
         var year = $("#car_point_year").val();
         var make = $("#car_point_make").val();
         var model = $("#car_point_model").val();
         var accepts = $("#as_csv").prop("checked") ? "csv" : "json";
+        if (accepts === "csv") {
+         window.location.href = "./find.csv?year=" + year + "&make=" + make + "&model=" + model;
+         showTable();
+        } else {
         $.ajax({
           type: "GET",
           url: "/car_search/find",
           dataType: accepts,
-          //accepts: accepts,
           data: { year: year, make: make, model: model },
           success: function(data) {
             baseapp.data_tables.updateData(resultsDivId, data.results);
@@ -58,6 +62,7 @@ if (typeof baseapp.carsearch === "undefined") {
             showError();
           }
         });
+        }
 
       });
 

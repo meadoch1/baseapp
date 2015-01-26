@@ -9,7 +9,11 @@ class CarSearchController < ApplicationController
   end
 
   def find
-    result = CarSearch.find(params[:year], params[:make], params[:model])
-    respond_with(result)
+    @result = CarSearch.find(params[:year], params[:make], params[:model])
+    respond_to do |format|
+      format.json {render json: {results: @result.points}}
+      format.csv { send_data ActiveRecordCsv.to_csv(@result.points), filename: "carsearch.csv" }
+    end
+    #respond_with(result)
   end
 end

@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe "car_points/index", :type => :view do
     login_user
   before(:each) do
-    assign(:car_points, [
+    assign(:car_points, Kaminari.paginate_array([
       create(:car_point, year: 2000),
       create(:car_point, year: 2000)
-    ])
+      ]).page(1))
   end
 
   it "renders a list of car_points" do

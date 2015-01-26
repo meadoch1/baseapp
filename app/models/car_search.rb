@@ -2,6 +2,7 @@ class CarSearch
   extend Forwardable
 
   def_delegators :@points, :map, :each, :size, :empty?, :first, :join
+  attr_reader :points
 
   def initialize(points)
     @points = points

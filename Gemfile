@@ -55,6 +55,7 @@ group :production do
 end
 
 group :test do
+  gem 'kaminari-rspec'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'faker'

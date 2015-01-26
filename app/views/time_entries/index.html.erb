@@ -18,19 +18,33 @@
   </div>
   <div class='col-md-10'>
 
-    <table>
 
       <tbody>
       <% @time_entries.each do |time_entry| %>
-        <tr>
-        <div class='time-entry task-name'><%= time_entry.task.name %>( <%= time_entry.project.name %> )</div></br>
-        <div class='time-entry description'><%= time_entry.description || "No description entered" %></div>
-        <button type="button" id="btn-start-<%= time_entry.id %>" class="btn btn-success" data-time-entry-id=<%= time_entry.id %>>Start</button>
-        <td><%= link_to 'Edit', edit_time_entry_path(time_entry), class: 'btn btn-default' %></td>
-      </tr>
-    <% end %>
+        <div class='row time-entry-row'>
+          <div class='row'>
+            <div class='time-entry task-name'><%= time_entry.task.name %>( <%= time_entry.project.name %> )</div></br>
+          </div>
+          <div class='row'>
+            <div class='col-md-8'>
+              <div class='row'>
+                <div class='col-md-11'>
+                  <div class='time-entry-description'><%= time_entry.description || "No description entered" %></div>
+                </div>
+                <div class='col-md-1'>
+                  <div class='time-entry'><%= time_entry.accrued_hrs || "No description entered" %></div>
+                </div>
+              </div>
+            </div>
+            <div class='col-md-4'>
+              <button type="button" id="btn-start-<%= time_entry.id %>" class="btn btn-success time-entry-start" data-time-entry-id=<%= time_entry.id %>>Start</button>
+              <button type="button" id="btn-edit-<%= time_entry.id %>" class="btn btn-default time-entry-edit" data-time-entry-id=<%= time_entry.id %>>Edit</button>
+            </div>
+          </div>
+        </div>
+        <% end %>
       </tbody>
-    </table>
+    </table
 
 
   </div>

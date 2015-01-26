@@ -14,6 +14,7 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require bootstrap_dialog
 //= require turbolinks
 //= require baseapp
 //= require_tree .

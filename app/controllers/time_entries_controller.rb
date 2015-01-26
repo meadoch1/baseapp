@@ -25,21 +25,32 @@ class TimeEntriesController < ApplicationController
 
   def new
     @time_entry = TimeEntry.new
-    respond_with(@time_entry)
+    set_defaults(@time_entry)
+    @projects = project_lookup
+    render layout: false
   end
 
   def edit
+    @projects = project_lookup
+    render layout: false
   end
 
   def create
-    @time_entry = TimeEntry.new(time_entry_params)
+    data = time_entry_params
+    do_start = data.delete("set_start")
+    @time_entry = TimeEntry.new(data)
+    set_defaults(@time_entry)
     @time_entry.save
-    respond_with(@time_entry)
+    @time_entry.do_start(do_start)
+    render nothing: true
   end
 
   def update
-    @time_entry.update(time_entry_params)
-    respond_with(@time_entry)
+    data = time_entry_params
+    do_start = data.delete("set_start")
+    @time_entry.update(data) unless data.empty?
+    @time_entry.do_start(do_start)
+    render nothing: true
   end
 
   def destroy
@@ -53,6 +64,23 @@ class TimeEntriesController < ApplicationController
     end
 
     def time_entry_params
-      params[:time_entry]
+      allowed_params = params.require(:time_entry).permit(:description, :project_id, :task_id, :accrued_hrs, :set_start)
+      allowed_params["accrued_hrs"] = allowed_params["accrued_hrs"].to_f if allowed_params["accrued_hrs"]
+      allowed_params["set_start"] = allowed_params["set_start"] == "true" if allowed_params["set_start"]
+      allowed_params
     end
+
+    def project_lookup()
+      Project.all.group_by(&:company)
+      #vals = Project.all.map do |project|
+        #OpenStruct.new(company: project.customer.company, label: project.name, value: project.id )
+      #end
+      #vals
+    end
+
+    def set_defaults(time_entry)
+      time_entry.user ||= current_user
+      time_entry.performed_dt ||= Date.today
+    end
+
 end

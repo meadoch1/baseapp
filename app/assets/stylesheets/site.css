@@ -2,3 +2,13 @@
   font-size: x-large;
 
 }
+
+.time-entry-description {
+  border: solid 1px;
+  padding: 7px;
+}
+
+.time-entry-row {
+  margin-bottom: 15px;
+
+}

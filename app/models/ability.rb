@@ -7,7 +7,7 @@ class Ability
       can :manage, :all
     else
       can :read, :all
-      can :find, CarSearch
+      can :manage, TimeEntry
     end
   end
 end

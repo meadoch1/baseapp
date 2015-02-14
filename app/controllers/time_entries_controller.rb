@@ -72,10 +72,6 @@ class TimeEntriesController < ApplicationController
 
     def project_lookup()
       Project.all.group_by(&:company)
-      #vals = Project.all.map do |project|
-        #OpenStruct.new(company: project.customer.company, label: project.name, value: project.id )
-      #end
-      #vals
     end
 
     def set_defaults(time_entry)

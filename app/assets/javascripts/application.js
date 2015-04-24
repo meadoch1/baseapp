@@ -13,8 +13,11 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require dataTables/extras/dataTables.tableTools
 //= require twitter/bootstrap
 //= require bootstrap_dialog
 //= require turbolinks
-//= require baseapp
+//= require metanoia
 //= require_tree .

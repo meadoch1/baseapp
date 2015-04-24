@@ -1,0 +1,43 @@
+<%= simple_form_for @signup, url: client_signup_url, as: 'client_signup_form', html: { class: 'form-horizontal' },
+  wrapper: :horizontal_form,
+  wrapper_mappings: {
+    check_boxes: :horizontal_radio_and_checkboxes,
+    radio_buttons: :horizontal_radio_and_checkboxes,
+    file: :horizontal_file_input,
+    boolean: :horizontal_boolean
+  } do |f| %>
+  <%= f.error_notification %>
+<header role="heading">
+                  <h2>Enter the client's information below</h2>
+                </header>
+                <fieldset>
+  <legend>Name</legend>
+
+  <%= f.input :last_name, placeholder: 'Last Name' %>
+  <%= f.input :first_name, placeholder: 'First Name' %>
+  <%= f.input :middle_name, placeholder: 'Middle' %>
+  <%= f.input :contact_date, placeholder: 'Contact Date', as: :date_picker %>
+  </fieldset>
+  <fieldset><legend>Facility</legend>
+  <%= f.input :facility_id, collection: @facilities, placeholder: "Facility" %>
+  <%= f.input :facility_identifier, placeholder: 'Facility Indentifier' %>
+  <%= f.input :release_date, placeholder: 'Release Date', as: :date_picker %>
+  </fieldset>
+  <fieldset><legend>Contact Information</legend>
+  <%= f.input :phone, placeholder: 'Phone' %>
+  <%= f.input :mobile_phone, placeholder: 'Mobile Phone' %>
+  <%= f.input :address_type_id, collection: @address_types, placeholder: "Address Type" %>
+  <%= f.input :line1, placeholder: 'Street' %>
+  <%= f.input :line2, placeholder: 'Address Line 2' %>
+  <%= f.input :city, placeholder: 'City' %>
+  <%= f.input :state, placeholder: 'State' %>
+  <%= f.input :zip, placeholder: 'Zip' %>
+  </fieldset>
+
+  <%= f.button :submit %>
+<% end %>
+<script type="text/javascript">
+$(function() {
+  $('input.date_picker').datepicker();
+    });
+</script>

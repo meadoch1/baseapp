@@ -7,7 +7,7 @@ class Ability
       can :manage, :all
     else
       can :read, :all
-      can :manage, TimeEntry
+      can :manage, Client
     end
   end
 end

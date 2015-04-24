@@ -12,3 +12,65 @@
   margin-bottom: 15px;
 
 }
+
+.header .search-form {
+  display: inline-block;
+  float: right;
+  margin-right: 25px !important;
+  top: -4.5px;
+  position: relative;
+}
+
+.input-prepend,
+.input-append {
+  border: 0;
+  display: inline-block;
+}
+.input-append .add-on,
+.input-prepend .add-on {
+  display: inline-block;
+  width: auto;
+  height: 24px;
+  min-width: 16px;
+  padding: 4px 5px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 24px;
+  text-align: center;
+  text-shadow: 0 1px 0 #ffffff;
+  background-color: #e5e5e5;
+  border: 1px solid #e5e5e5;
+}
+
+.input-append .add-on > .halflings-icon,
+.input-prepend .add-on > i,
+.input-prepend .add-on > .fa {
+  margin-top: 5px;
+  margin-left: 3px;
+}
+.input-append .add-on > .halflings-icon .input-append .add-on > i,
+.input-append .add-on > .fa {
+  margin-top: 5px;
+  margin-left: 0px;
+}
+.input-append,
+.input-append :focus {
+  border-right: 0 !important;
+}
+.input-append input[class*="span"],
+.input-prepend input[class*="span"],
+.input-append input,
+.input-prepend input {
+  display: inline-block !important;
+  width: 100%;
+  float: left;
+}
+.iconset.top-search {
+  background-position: -261px -6px;
+  width: 16px;
+  height: 16px;
+  top: 5px;
+}
+.m-r-10 {
+  margin-right: 10px;
+}

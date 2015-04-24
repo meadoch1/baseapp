@@ -22,8 +22,9 @@ gem 'autoprefixer-rails'
 
 gem 'rails_admin'
 gem 'cancancan', '~> 1.10'
+gem 'virtus'
 #gem "paperclip", "~> 4.2"
-#gem 'jquery-datatables-rails', '~> 3.1.1'
+gem 'jquery-datatables-rails', '~> 3.1.1'
 #gem 'kaminari'
 # Use Unicorn as the app server
 # gem 'unicorn'

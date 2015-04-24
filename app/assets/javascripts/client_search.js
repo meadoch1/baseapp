@@ -1,6 +1,6 @@
-/* global baseapp */
-if (typeof baseapp.carsearch === "undefined") {
-  baseapp.carsearch = (function() {
+/* global metanoia */
+if (typeof metanoia.clientsearch === "undefined") {
+  metanoia.clientsearch = (function() {
     "use strict";
     var resultsDivId = "#results";
 
@@ -28,10 +28,12 @@ if (typeof baseapp.carsearch === "undefined") {
         return;
       }
 
-      baseapp.data_tables.setupTable(resultsDivId, [
-        { data: "year" },
-        { data: "make" },
-        { data: "model" }
+      metanoia.data_tables.setupTable(resultsDivId, [
+        { data: "first_name" },
+        { data: "last_name" },
+        { data: "city" },
+        { data: "state" },
+        { data: "facility_name" }
         ]
         );
 
@@ -41,21 +43,23 @@ if (typeof baseapp.carsearch === "undefined") {
         e.preventDefault();
 
         showProcessing();
-        var year = $("#car_point_year").val();
-        var make = $("#car_point_make").val();
-        var model = $("#car_point_model").val();
+        var first_name = $("#client_search_first_name").val();
+        var last_name = $("#client_search_last_name").val();
+        var city = $("#client_search_city").val();
+        var state = $("#client_search_state").val();
+        var facility_name = $("#client_search_facility_name").val();
         var accepts = $("#as_csv").prop("checked") ? "csv" : "json";
         if (accepts === "csv") {
-         window.location.href = "./find.csv?year=" + year + "&make=" + make + "&model=" + model;
+         window.location.href = "./find.csv?first=" + first_name + "&last=" + last_name + "&city=" + city + "&state=" + state + "&facility=" + facility;
          showTable();
         } else {
         $.ajax({
           type: "GET",
-          url: "/car_search/find",
+          url: "/client_search/find.json",
           dataType: accepts,
-          data: { year: year, make: make, model: model },
+          data: { first_name: first_name, last_name: last_name, city: city, state: state, facility_name: facility_name },
           success: function(data) {
-            baseapp.data_tables.updateData(resultsDivId, data.results);
+            metanoia.data_tables.updateData(resultsDivId, data.results);
             showTable();
           },
           error: function(){

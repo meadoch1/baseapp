@@ -2,12 +2,12 @@
 <%= simple_form_for :client_search, url: client_search_find_url, html: { class: 'form-inline' } do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :city %>
-    <%= f.input :state %>
-    <%= f.input :facility_name, collection: @facilities %>
+  <div class="form-inputs form-inline">
+    <%= f.input :first_name, placeholder: "First Name", label: false %>
+    <%= f.input :last_name, placeholder: "Last Name", label: false %>
+    <%= f.input :city, placeholder: "City", label: false %>
+    <%= f.input :state, placeholder: "State", label: false %>
+    <%= f.input :facility_id, collection: @facilities, placeholder: "Facility", label: false %>
   </div>
   <br />
   <div class="form-actions">

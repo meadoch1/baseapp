@@ -34,7 +34,9 @@ if (typeof metanoia.data_tables === "undefined") {
           } else {
             var oTable = resultDiv.dataTable();
             oTable.fnClearTable();
-            oTable.fnAddData(results);
+            if (results.length > 0) {
+              oTable.fnAddData(results);
+            }
           }
 
       }

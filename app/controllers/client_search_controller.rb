@@ -5,15 +5,16 @@ class ClientSearchController < ApplicationController
 
   def index
     @client = Client.new
-    #@years = CarPoint.uniq.pluck(:year).sort
+    @facilities = Facility.order(:name)
   end
 
   def find
-    @result = ClientSearch.find(params[:year], params[:make], params[:model])
-    #respond_to do |format|
-      #format.json {render json: {results: @result.clients}}
-      #format.csv { send_data ActiveRecordCsv.to_csv(@result.clients), filename: "clientsearch.csv" }
-    #end
-    #respond_with(result)
+    @result = ClientSearch.find(
+      params[:first_name],
+      params[:last_name],
+      params[:city],
+      params[:state],
+      params[:facility_id]
+    )
   end
 end

@@ -47,7 +47,7 @@ if (typeof metanoia.clientsearch === "undefined") {
         var last_name = $("#client_search_last_name").val();
         var city = $("#client_search_city").val();
         var state = $("#client_search_state").val();
-        var facility_name = $("#client_search_facility_name").val();
+        var facility_id = $("#client_search_facility_id").val();
         var accepts = $("#as_csv").prop("checked") ? "csv" : "json";
         if (accepts === "csv") {
          window.location.href = "./find.csv?first=" + first_name + "&last=" + last_name + "&city=" + city + "&state=" + state + "&facility=" + facility;
@@ -57,7 +57,7 @@ if (typeof metanoia.clientsearch === "undefined") {
           type: "GET",
           url: "/client_search/find.json",
           dataType: accepts,
-          data: { first_name: first_name, last_name: last_name, city: city, state: state, facility_name: facility_name },
+          data: { first_name: first_name, last_name: last_name, city: city, state: state, facility_id: facility_id },
           success: function(data) {
             metanoia.data_tables.updateData(resultsDivId, data.results);
             showTable();
